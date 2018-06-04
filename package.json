@@ -1,0 +1,11 @@
+{
+  "name": "relatr",
+  "version": "1.0.0",
+  "description": "Regurgitates text messages",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Frazier",
+  "license": "ISC"
+}
