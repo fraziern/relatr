@@ -3,9 +3,22 @@
   "version": "1.0.0",
   "description": "Regurgitates text messages",
   "main": "start.js",
+  "engines": {
+    "node": ">= 7.6.0"
+  },
   "scripts": {
+    "watch": "nodemon ./start.js --ignore public/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nick Frazier",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
+    "es6-promisify": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.3"
+  }
 }
