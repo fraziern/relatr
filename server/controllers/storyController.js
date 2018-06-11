@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const Store = mongoose.model('Store');
+const Story = mongoose.model("Story");
 // const User = mongoose.model('User');
 // const multer = require('multer');
 // const jimp = require('jimp');
@@ -21,9 +21,9 @@ exports.homePage = (req, res) => {
   res.render("index");
 };
 
-// exports.addStore = (req, res) => {
-//   res.render('editStore', { title: 'Add Store' });
-// };
+exports.addStory = (req, res) => {
+  res.render("editStory", { title: "Add Story" });
+};
 
 // exports.upload = multer(multerOptions).single('photo');
 
@@ -43,15 +43,12 @@ exports.homePage = (req, res) => {
 //   next();
 // };
 
-// exports.createStore = async (req, res) => {
-//   req.body.author = req.user._id;
-//   const store = await new Store(req.body).save();
-//   req.flash(
-//     'success',
-//     `Successfully Created ${store.name}. Care to leave a review?`
-//   );
-//   res.redirect(`/store/${store.slug}`);
-// };
+exports.createStory = async (req, res) => {
+  const story = await new Story(req.body).save();
+  req.flash("success", "Successfully Created Story.");
+  res.redirect("/");
+  // res.redirect(`/story/${story.storyId}`);
+};
 
 // exports.getStores = async (req, res) => {
 //   const page = req.params.page || 1;

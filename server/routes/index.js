@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const msgController = require("../controllers/msgController");
+const storyController = require("../controllers/storyController");
 const { catchErrors } = require("../handlers/errorHandlers");
 
-router.get("/", catchErrors(msgController.homePage));
+router.get("/", storyController.homePage);
 // router.get('/stores', catchErrors(storeController.getStores));
 // router.get('/stores/page/:page', catchErrors(storeController.getStores));
-// router.get('/add', authController.isLoggedIn, storeController.addStore);
+router.get("/add", storyController.addStory);
 
-// router.post(
-//   '/add',
-//   storeController.upload,
-//   catchErrors(storeController.resize),
-//   catchErrors(storeController.createStore)
-// );
+router.post(
+  "/add",
+  //   storeController.upload,
+  //   catchErrors(storeController.resize),
+  catchErrors(storyController.createStory)
+);
 // router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 
 // router.post(

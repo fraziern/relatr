@@ -1,0 +1,9 @@
+mixin storyForm(story = {})
+  form(action=`/add/${story._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+    - const messages = [1,2,3]
+    ul.messages
+      each message in messages
+        .messages.messages__message
+          label(for="messagebody") Message
+          textarea(type="text" name="messages[][messagebody]")
+    input(type="submit" value="Save ->" class="button")
